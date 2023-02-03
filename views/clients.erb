@@ -1,0 +1,16 @@
+<section class="recent-projects">
+  <p>All tasks:</p>
+  <table class="recent-projects-table">
+    <tr>
+      <th>Name</th>
+    </tr>
+    <% paginate_items(@clients, @page) do |client| %>
+      <tr>
+        <td><%= client["name"] %></td>
+      </tr>
+    <% end %>
+  </table>
+  <div class="page">
+  <a href="/clients/all/<%= @page - 1 %>">previous</a><p>... Page <%= @page %> / <%= @page_count %> ...</p><a href="/clients/all/<%= @page + 1 %>">next</a>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<section class="recent-projects">
+  <p>Sort by  : <a href="/tasks/all/1?sort=oldest">oldest</a> | <a href="/tasks/all/1">newest</a></p>
+  <p>All tasks:</p>
+  <table class="recent-projects-table">
+    <tr>
+      <th>Task</th>
+      <th>Started</th>
+      <th>Stopped</th>
+      <th>Project</th>
+      <th>Client</th>
+    </tr>
+    <% paginate_items(@tasks, @page, reverse: params["sort"]) do |task| %>
+      <tr>
+        <td><%= task["task"] %></td>
+        <td><%= task["start"].stamp("Jan 1, 01:00 AM") %></td>
+        <td><%= task["stop"].stamp("Jan 1, 01:00 AM") %></td>
+        <td><%= task["project"] %></td>
+        <td><%= task["client"] %></td>
+        <td><a id="edit-task" href="/edit/task/<%= task["task_id"] %>">Edit</a></td>
+        <td>
+          <form class="delete" action="/task/delete" method="post">
+          <input type="hidden" name="task_id" value="<%= task["task_id"] %>">
+          <input type="hidden" name="url" value="<%= @current_path %>">
+            <button type=submit>Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <div class="page">
+  <% if params["sort"] %>
+  <a href="/tasks/all/<%= @page - 1 %>?sort=oldest">previous</a><p>... Page <%= @page %> / <%= @page_count %> ...</p><a href="/tasks/all/<%= @page + 1 %>?sort=oldest">next</a>
+  <% else %>
+  <a href="/tasks/all/<%= @page - 1 %>">previous</a><p>... Page <%= @page %> / <%= @page_count %> ...</p><a href="/tasks/all/<%= @page + 1 %>">next</a>
+  <% end %>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section>
+  <p>Selected client:</p>
+  <p><%= @client[:name] %></p>
+  <form action="/project" method="post">
+    <label for="project_list">Select a project:</label>
+    <select name="project_id" id="project_list">
+      <option value="" disabled selected>Select from list</option>
+      <% @projects.each do |project| %>
+        <option value="<%= project[:id]%>"><%= project[:name] %></option>
+      <% end %>
+    </select>
+    <label for="new_project">Or create a new project:</label>
+    <input type="text" name="new_project">
+    <button type="submit">Create</button>
+  </form>
+</section>

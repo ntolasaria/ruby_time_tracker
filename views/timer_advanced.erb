@@ -1,0 +1,25 @@
+<%# Options on the page:
+select client | select project | task 
+
+add new client | add new project |
+%>
+<section>
+  <form action="/timer" method="post">
+    <label for="client">Select Client:</label>
+    <select name="client_id" id="client">
+      <option value="" disabled selected><%= @client_name || "Select from list" %></option>
+      <% if @clients %>
+      <% @clients.each do |client| %>
+        <option value="<%= client[:id] %>"><%= client[:name] %></option>
+      <% end %>
+      <% end %>
+    </select>
+    <% if @clients %>
+      <button type="submit">Submit</button>
+      <% end %>
+
+
+  </form>
+
+
+</section>

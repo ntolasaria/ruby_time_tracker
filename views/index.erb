@@ -1,0 +1,29 @@
+<section class="recent-projects">
+  <p>Some of the recent projects you have worked on:</p>
+  <table class="recent-projects-table">
+    <tr>
+      <th>Task</th>
+      <th>Started</th>
+      <th>Stopped</th>
+      <th>Project</th>
+      <th>Client</th>
+    </tr>
+    <% @recent_tasks.each do |task| %>
+      <tr>
+        <td><%= task["task"] %></td>
+        <td><%= task["start"].stamp("Jan 1, 01:00 AM") %></td>
+        <td><%= task["stop"].stamp("Jan 1, 01:00 AM") %></td>
+        <td><%= task["project"] %></td>
+        <td><%= task["client"] %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>
+<section>
+  <% if !@storage.active_task %>
+  <form action="/timer" method="get">
+    <label for="timer">Start working on something:</label>
+    <button class="start" type="submit">Start</button>
+    <% end %>
+  </form>
+</section>

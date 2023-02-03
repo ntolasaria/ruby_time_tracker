@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Time Tracker</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+  </head>
+  <body>
+    <header>
+      <h1 class="header">Time Tracker</h1>
+    </header>
+    <nav>
+      <a href="/">Home</a> | 
+      <a href="/timer">Timer</a> | 
+      <a href="/tasks/all/1">Tasks</a> |
+      <a href="/clients/all/1">Clients</a>
+    </nav>
+    <div>
+      <% if session[:error] %>
+      <p id="error"><%= session.delete(:error) %></p>
+      <% end %>
+    </div>
+    <div class="actions">
+      <%= yield_content :header_links %>
+    </div>
+    <section class="active-task">
+      <% active_task = @storage.active_task %>
+      <% if active_task %>
+        <p id="active-task"><%= print_active_task(active_task) %></p>
+        <form action="/timer" method="post">
+          <button class="stop" type="submit">Stop</button>
+        </form>
+      <% end %>
+    </section>
+    <%= yield %>
+  </body>
+</html>

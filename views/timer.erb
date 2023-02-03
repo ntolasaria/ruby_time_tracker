@@ -1,0 +1,66 @@
+<section>
+  <form action="/timer" method="post">
+    <label for="task">Task</label>
+    <% if @active_task %>
+      <input type="text" placeholder="<%= @active_task["task"] %>" disabled>
+    <% else %>
+      <input list="tasks-list" name="task" require="true" value="<%= params["task"] %>">
+    <% end %>
+    <datalist id="tasks-list">
+      <% @tasks.each do |task| %>
+        <option value="<%=task["name"] %>">
+        <% end %>
+      </datalist>
+      <label for="project">Project</label>
+      <% if @active_task %>
+        <input type="text" placeholder="<%= @active_task["project"] %>" disabled>
+      <% else %>
+        <input list="projects-list" name="project" value="<%= params["project"] %>">
+      <% end %>
+      <datalist id="projects-list">
+        <% @projects.each do |project| %>
+          <option value="<%= project["name"] %>">
+          <% end %>
+        </datalist>
+        <label for="client">Client</label>
+        <% if @active_task %>
+          <input type="text" placeholder="<%= @active_task["client"] %>" disabled>
+        <% else %>
+          <input list="clients-list" name="client" value="<%= params["client"] %>">
+        <% end %>
+        <datalist id="clients-list">
+          <% @clients.each do |client| %>
+            <option value="<%= client["name"] %>">
+            <% end %>
+          </datalist>
+          <% if @active_task %>
+            <button class="stop" type="submit">Stop</button>
+          <% else %>
+            <button class="start" type="submit">Start</button>
+          <% end %>
+        </form>
+      </section>
+
+      <section class="recent-projects">
+  <p>Some of the recent projects you have worked on:</p>
+  <table class="recent-projects-table">
+    <tr>
+      <th>Task</th>
+      <th>Started</th>
+      <th>Stopped</th>
+      <th>Project</th>
+      <th>Client</th>
+    </tr>
+    <% @recent_tasks.each do |task| %>
+      <tr>
+        <td><%= task["task"] %></td>
+        <td><%= task["start"].stamp("Jan 1, 01:00 AM") %></td>
+        <td><%= task["stop"].stamp("Jan 1, 01:00 AM") %></td>
+        <td><%= task["project"] %></td>
+        <td><%= task["client"] %></td>
+        <td><a id="edit-task" href="/edit/task/<%= task["task_id"] %>">Edit</a></td>
+      </tr>
+    <% end %>
+  </table>
+
+</section>

@@ -1,0 +1,11 @@
+<section>
+  <p>Selected client:</p>
+  <p><%= @client[:name] %></p>
+  <p>Selected prooject:</p>
+  <p><%= @project[:name] %></p>
+  <form action="/task" method="post">
+    <label for="new_project">Enter the task you are working on:</label>
+    <input type="text" name="task">
+    <button type="submit">Start</button>
+  </form>
+</section>
