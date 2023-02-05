@@ -54,14 +54,17 @@ button.stop {
 
 
 a {
-  color: darkgray;
+  color: #506EA2;
   text-decoration: none;
 }
 
 a:hover {
-  color: black;
+  color: #506EA2;
   font-weight: bold;
   background-color: lightgray;
+  padding: 0.25em;
+  border-radius: 10px;
+  box-shadow: 1em;
 }
 
 #error {
@@ -77,4 +80,22 @@ a:hover {
 
 .page p {
   display: inline-block;
+}
+
+.edit {
+  padding-top: 2em;
+  display: block;
+}
+
+.edit input {
+  width: 50%;
+  display: block;
+  background-color: azure;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: .25em;
+}
+
+.edit label {
+  padding-top: 1em;
+  font-weight: bold;
 }

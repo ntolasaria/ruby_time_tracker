@@ -23,3 +23,15 @@ ADD UNIQUE (name);
 
 ALTER TABLE projects
 ADD UNIQUE (name, client_id)
+
+ALTER TABLE projects
+DROP CONSTRAINT projects_client_id_fkey;
+
+ALTER TABLE projects
+ADD FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE;
+
+ALTER TABLE tasks
+DROP CONSTRAINT tasks_project_id_fkey;
+
+ALTER TABLE tasks
+ADD FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE;

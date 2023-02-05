@@ -1,0 +1,7 @@
+<section class="edit">
+  <form action="/edit/client/<%= @client["id"] %>" method="post" class="edit">
+    <label for="client">Client:</label>
+    <input type="text" id="client" name="client" value="<%= @client["name"] %>">
+    <button type="submit">Edit</button>
+  </form>
+</section>

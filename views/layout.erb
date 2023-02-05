@@ -13,6 +13,7 @@
       <a href="/">Home</a> | 
       <a href="/timer">Timer</a> | 
       <a href="/tasks/all/1">Tasks</a> |
+      <a href="/projects/all/1">Projects</a> |
       <a href="/clients/all/1">Clients</a>
     </nav>
     <div>
@@ -26,12 +27,12 @@
     <section class="active-task">
       <% active_task = @storage.active_task %>
       <% if active_task %>
-        <p id="active-task"><%= print_active_task(active_task) %></p>
+        <p id="active-task"><%== print_active_task(active_task) %></p>
         <form action="/timer" method="post">
           <button class="stop" type="submit">Stop</button>
         </form>
       <% end %>
     </section>
-    <%= yield %>
+    <%== yield %>
   </body>
 </html>

@@ -7,6 +7,14 @@
     <% paginate_items(@clients, @page) do |client| %>
       <tr>
         <td><%= client["name"] %></td>
+        <td><a id="edit-client" href="/edit/client/<%= client["id"] %>">Edit</a></td>
+        <td>
+          <form class="delete" action="/client/delete" method="post">
+            <input type="hidden" name="client_id" value="<%= client["id"] %>">
+            <input type="hidden" name="url" value="<%= @current_path %>">
+            <input type="submit" value="delete">
+          </form>
+        </td>
       </tr>
     <% end %>
   </table>
