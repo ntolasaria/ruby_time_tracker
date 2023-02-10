@@ -8,14 +8,14 @@
   <body>
     <header>
       <h1 class="header">Time Tracker</h1>
+      <nav>
+        <a href="/">Home</a> | 
+        <a href="/timer">Timer</a> | 
+        <a href="/tasks/all/1">Tasks</a> |
+        <a href="/projects/all/1">Projects</a> |
+        <a href="/clients/all/1">Clients</a>
+      </nav>
     </header>
-    <nav>
-      <a href="/">Home</a> | 
-      <a href="/timer">Timer</a> | 
-      <a href="/tasks/all/1">Tasks</a> |
-      <a href="/projects/all/1">Projects</a> |
-      <a href="/clients/all/1">Clients</a>
-    </nav>
     <div>
       <% if session[:error] %>
       <p id="error"><%= session.delete(:error) %></p>

@@ -1,8 +1,9 @@
 <section class="recent-projects">
   <p>All tasks:</p>
-  <table class="recent-projects-table">
+  <table class="recent-projects-table" cellspacing="0">
     <tr>
       <th>Name</th>
+      <th colspan="2">Actions</th>
     </tr>
     <% paginate_items(@clients, @page) do |client| %>
       <tr>

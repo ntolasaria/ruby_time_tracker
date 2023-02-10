@@ -1,41 +1,93 @@
-body {
-  margin-top: 0;
-  margin-right: 0;
-  margin-left: 20px;
+html {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  margin-bottom: 2rem;
+  /* margin-left: 1em; */
 }
 
 
+header {
+  color: lightgrey;
+  background-image: url("./../images/pngtree-dark-blue-lines-tech-business-banner-background-picture-image_1101677.jpg");
+  /* background-size: auto; */
+  /* background-color: rgb(47, 47, 47); */
+  /* background-color: rgb(14, 82, 147); */
+  /* position: fixed; */
+  /* top: 0;
+  width: 100%;
+  margin-bottom: 1rem; */
+
+  /* margin: -1em; */
+  /* padding-left: 1em; */
+  width: auto;
+}
+
 .header {
-  background-color: black;
+  font-size: 2rem;
+  padding: 0.5em 1em;
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+nav {
+  display: inline-block;
+  width: 49%;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+  text-align: right;
+  vertical-align: baseline;
+}
+
+nav a {
   color: lightgray;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 0;
-  margin-left: 0;
-  padding-left: 1em;
 }
 
 .recent-projects {
   /* padding-left: 1em; */
-  margin-left: 20px;
-  font-size: 16px;
+  padding-top: 1em;
+  font-size: 1rem;
+}
+
+table.recent-projects-table {
+  table-layout: auto;
+
+}
+
+.start-timer {
+  margin-left: 1.5rem;
+}
+
+.recent-projects {
+  margin-left: 1.5rem;
 }
 
 .recent-projects-table td, th {
   /* padding-left: 20px; */
-  margin-left: 20px;
-  table-layout: auto;
+  font-size: 1rem;
   border-bottom: 1px solid lightslategray;
-  padding: 0.25em;
+  padding: 0.4em;
+  border-bottom: 0.5px solid rgb(14, 82, 147);
+  border-spacing: 0;
   /* border: 0.5px solid black; */
   /* padding: 0.25em;
   padding-left: 1em;
   padding-right: 1em; */
+
 }
 
 .recent-projects-table th {
-  background-color: grey;
+  padding: 0.25em;
+  background-color: #010039;
+  color: lightgrey;
+  /* color: #02E5FB; */
 }
 
 button {
@@ -45,17 +97,18 @@ button {
 }
 
 button.start {
-  background-color: green;
+  background-color: rgb(153, 185, 153);
 }
 
 button.stop {
-  background-color: crimson;
+  background-color: rgb(189, 151, 159);
 }
 
 
 a {
   color: #506EA2;
   text-decoration: none;
+  display: inline-block;
 }
 
 a:hover {
@@ -71,7 +124,10 @@ a:hover {
   color: darkred;
   background-color: salmon;
   padding: 0.25em;
-
+  width: 80%;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .page {
@@ -83,19 +139,33 @@ a:hover {
 }
 
 .edit {
-  padding-top: 2em;
+  padding-top: 2rem;
+  width: 50%;
+  /* margin-left: 1.5rem; */
   display: block;
+  margin: 0 auto;
 }
 
 .edit input {
-  width: 50%;
+  width: 100%;
+  /* width: 50%; */
   display: block;
   background-color: azure;
   font-family: Arial, Helvetica, sans-serif;
   padding: .25em;
+  border-radius: 5px;
+  margin-bottom: .5rem;
 }
 
 .edit label {
   padding-top: 1em;
   font-weight: bold;
+}
+
+.active-task {
+  margin-left: 1.5rem;
+}
+
+.inactive-task {
+  margin-left: 1.5rem;
 }

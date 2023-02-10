@@ -1,13 +1,14 @@
 <section class="recent-projects">
   <p>Sort by  : <a href="/tasks/all/1?sort=oldest">oldest</a> | <a href="/tasks/all/1">newest</a></p>
   <p>All tasks:</p>
-  <table class="recent-projects-table">
+  <table class="recent-projects-table" cellspacing="0">
     <tr>
       <th>Task</th>
       <th>Started</th>
       <th>Stopped</th>
       <th>Project</th>
       <th>Client</th>
+      <th colspan="2">Actions</th>
     </tr>
     <% paginate_items(@tasks, @page, reverse: params["sort"]) do |task| %>
       <tr>

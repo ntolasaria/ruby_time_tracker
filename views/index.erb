@@ -1,6 +1,6 @@
 <section class="recent-projects">
   <p>Some of the recent projects you have worked on:</p>
-  <table class="recent-projects-table">
+  <table class="recent-projects-table" cellspacing="0">
     <tr>
       <th>Task</th>
       <th>Started</th>
@@ -19,7 +19,7 @@
     <% end %>
   </table>
 </section>
-<section>
+<section class="inactive-task">
   <% if !@storage.active_task %>
   <form action="/timer" method="get">
     <label for="timer">Start working on something:</label>

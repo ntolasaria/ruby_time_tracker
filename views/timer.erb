@@ -1,4 +1,4 @@
-<section>
+<section class="start-timer">
   <form action="/timer" method="post">
     <label for="task">Task</label>
     <% if @active_task %>
@@ -43,13 +43,14 @@
 
       <section class="recent-projects">
   <p>Some of the recent projects you have worked on:</p>
-  <table class="recent-projects-table">
+  <table class="recent-projects-table" cellspacing="0">
     <tr>
-      <th>Task</th>
+      <th>Task</th>  
       <th>Started</th>
       <th>Stopped</th>
       <th>Project</th>
       <th>Client</th>
+      <th colspan="2">Actions</th>
     </tr>
     <% @recent_tasks.each do |task| %>
       <tr>
